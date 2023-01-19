@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  /* primary colors */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* neutral colors */
+  --bg-color: hsl(217, 54%, 11%);
+  --card-bg-color: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  /* font weights */
+  --fw-thin: 300;
+  --fw-normal: 400;
+  --fw-bold: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--bg-color);
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--card-bg-color);
+
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  width: 375px;
+  height: auto;
+}
+
+.img__container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  transition: 0.3s ease;
+  background: var(--cyan);
+}
+
+.overlay img {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+
+.img__container {
+  margin: 1.5rem;
+}
+
+.img__container .cube,
+.overlay {
+  border: none;
+  border-radius: 1rem;
+
+  width: 100%;
+  height: auto;
+}
+
+.content__box {
+  margin: 0 1.5rem 1.5rem;
+}
+
+.content__box h1 {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 1rem;
+}
+
+.content__box p.desc {
+  color: var(--soft-blue);
+  font-weight: var(--fw-thin);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+}
+
+.coin__details {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coin__box,
+.time__box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--soft-blue);
+}
+
+.coin__box img,
+.time__box img {
+  width: auto;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.coin__box {
+  color: var(--white);
+}
+
+hr.divider {
+  border: 0.25px solid var(--line-color);
+}
+
+.creator__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+
+  margin: 1rem 0 0;
+  color: var(--soft-blue);
+}
+
+.creator__box img {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.creator__box a {
+  color: var(--white);
+}
+
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--white);
+  margin-top: 2.5rem;
+}
+
+.attribution a {
+  font-size: 0.8rem;
+  color: var(--soft-blue);
+}
+
+/* Hover states */
+
+.content__box h1:hover,
+.img__container:hover .overlay,
+.creator__box a {
+  cursor: pointer;
+  opacity: 1;
+}
